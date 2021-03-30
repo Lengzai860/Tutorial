@@ -1,0 +1,18 @@
+models:
+  Voucher:
+    order_id: int
+
+controllers:
+  Voucher:
+    index:
+      query: all
+      render: voucher.index with:vouchers
+
+    store:
+      validate: order_id
+      save: voucher
+      send: ReviewNotification to:voucher.author with:voucher
+      dispatch: SyncMedia with:voucher
+      fire: NewVoucher with:voucher
+      flash: voucher.title
+      redirect: voucher.index

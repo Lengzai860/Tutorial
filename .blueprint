@@ -1,0 +1,15 @@
+created:
+    - app/Http/Controllers/VoucherController.php
+    - database/factories/VoucherFactory.php
+    - database/migrations/2021_03_29_161229_create_vouchers_table.php
+    - app/Voucher.php
+    - tests/Feature/Http/Controllers/VoucherControllerTest.php
+    - app/Events/NewVoucher.php
+    - app/Http/Requests/VoucherStoreRequest.php
+    - app/Jobs/SyncMedia.php
+    - app/Notification/ReviewNotification.php
+    - resources/views/voucher/index.blade.php
+updated:
+    - routes/web.php
+models:
+    Voucher: { order_id: int }
